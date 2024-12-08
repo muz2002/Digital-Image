@@ -1,0 +1,60 @@
+{% load static %}
+<div class="sidebar" data-color="black">
+    <div class="sidebar-wrapper">
+      <div class="logo">
+        <a href="/" class="simple-text logo-mini">
+          <img src="{% static 'assets/img/cnn_icon.png' %}" alt="logo">
+        </a>
+        <a href="/" class="simple-text logo-normal">
+          CNN Dashboard
+        </a>
+      </div>
+      <ul class="nav">
+        <li>
+          <a href="{% url 'model_inference' 'resnet50' %}">
+              
+            <i class="tim-icons icon-components" data-toggle="tooltip" data-placement="top" title="ResNet50: Deep Residual Network"></i>
+            <!-- Add a data-toggle attribute to icons or titles -->
+
+            <p>ResNet50</p>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'model_inference' 'vgg16' %}">
+            <i class="tim-icons icon-image-02"></i>
+            <p>VGG16</p>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'model_inference' 'mobilenet_v2' %}">
+            <i class="tim-icons icon-mobile"></i>
+            <p>MobileNetV2</p>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'model_inference' 'inception_v3' %}">
+            <i class="tim-icons icon-atom"></i>
+            <p>InceptionV3</p>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'model_inference' 'googlenet' %}">
+            <i class="tim-icons icon-world"></i>
+            <p>GoogLeNet</p>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'model_inference' 'lenet' %}">
+            <i class="tim-icons icon-laptop"></i>
+            <p>LeNet (Demo)</p>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'model_inference' 'yolov5' %}">
+            <i class="tim-icons icon-zoom-split"></i>
+            <p>YOLOv5</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+</div>

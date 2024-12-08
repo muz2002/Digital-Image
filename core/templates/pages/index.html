@@ -1,0 +1,275 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Hero Section -->
+<div class="panel-header panel-header-lg">
+    <div class="page-inner">
+        <div class="d-flex align-items-left flex-column flex-sm-row">
+            <div data-aos="fade-right">
+                <h2 class="text-white pb-2 fw-bold">Welcome to CNN Dashboard</h2>
+                <h5 class="text-white op-7 mb-2">Leverage powerful CNN models for image classification and object detection.</h5>
+                <a href="{% url 'model_inference' 'resnet50' %}" class="btn btn-primary btn-round mt-3">Get Started</a>
+            </div>
+            <div class="ml-md-auto py-2 py-md-0" data-aos="fade-left">
+                <img src="{% static 'assets/img/greetings.png' %}" alt="CNN Models" class="img-fluid" style="max-height: 200px;">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page-inner mt--5">
+    <!-- Models Overview -->
+    <div class="row">
+        <!-- ResNet50 -->
+        <div class="col-sm-6 col-md-4" data-aos="zoom-in">
+            <div class="card card-stats card-round">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col-icon">
+                            <div class="icon-big text-center icon-primary bubble-shadow-small">
+                                <img src="{% static 'assets/img/resnet50.png' %}" alt="ResNet50" class="img-fluid" style="max-height: 60px;">
+                            </div>
+                        </div>
+                        <div class="col col-stats ml-3 ml-sm-0">
+                            <div class="numbers">
+                                <p class="card-category">ResNet50</p>
+                                <h4 class="card-title">Deep Residual Network</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="mt-3 mb-0 text-muted">
+                        ResNet50 is known for its deep architecture and residual learning capabilities, enabling the training of very deep networks.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- VGG16 -->
+        <div class="col-sm-6 col-md-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="card card-stats card-round">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col-icon">
+                            <div class="icon-big text-center icon-success bubble-shadow-small">
+                                <img src="{% static 'assets/img/vggnet.png' %}" alt="VGG16" class="img-fluid" style="max-height: 60px;">
+                            </div>
+                        </div>
+                        <div class="col col-stats ml-3 ml-sm-0">
+                            <div class="numbers">
+                                <p class="card-category">VGG16</p>
+                                <h4 class="card-title">16-Layer CNN</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="mt-3 mb-0 text-muted">
+                        VGG16 features a simple and uniform architecture, making it a strong baseline for image classification tasks.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- MobileNetV2 -->
+        <div class="col-sm-6 col-md-4" data-aos="zoom-in" data-aos-delay="200">
+            <div class="card card-stats card-round">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col-icon">
+                            <div class="icon-big text-center icon-info bubble-shadow-small">
+                                <img src="{% static 'assets/img/mobilenet.png' %}" alt="MobileNetV2" class="img-fluid" style="max-height: 60px;">
+                            </div>
+                        </div>
+                        <div class="col col-stats ml-3 ml-sm-0">
+                            <div class="numbers">
+                                <p class="card-category">MobileNetV2</p>
+                                <h4 class="card-title">Lightweight CNN</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="mt-3 mb-0 text-muted">
+                        MobileNetV2 is optimized for mobile and embedded vision applications, balancing efficiency and performance.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- InceptionV3 -->
+        <div class="col-sm-6 col-md-4" data-aos="zoom-in" data-aos-delay="300">
+            <div class="card card-stats card-round">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col-icon">
+                            <div class="icon-big text-center icon-warning bubble-shadow-small">
+                                <img src="{% static 'assets/img/in.png' %}" alt="InceptionV3" class="img-fluid" style="max-height: 60px;">
+                            </div>
+                        </div>
+                        <div class="col col-stats ml-3 ml-sm-0">
+                            <div class="numbers">
+                                <p class="card-category">InceptionV3</p>
+                                <h4 class="card-title">Efficient CNN</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="mt-3 mb-0 text-muted">
+                        InceptionV3 uses inception modules to optimize computational efficiency while maintaining high accuracy.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- GoogLeNet -->
+        <div class="col-sm-6 col-md-4" data-aos="zoom-in" data-aos-delay="400">
+            <div class="card card-stats card-round">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col-icon">
+                            <div class="icon-big text-center icon-danger bubble-shadow-small">
+                                <img src="{% static 'assets/img/google.png' %}" alt="GoogLeNet" class="img-fluid" style="max-height: 60px;">
+                            </div>
+                        </div>
+                        <div class="col col-stats ml-3 ml-sm-0">
+                            <div class="numbers">
+                                <p class="card-category">GoogLeNet</p>
+                                <h4 class="card-title">Inception-Based CNN</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="mt-3 mb-0 text-muted">
+                        GoogLeNet leverages inception modules to build deeper networks without a significant increase in computational cost.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- LeNet (Demo) -->
+        <div class="col-sm-6 col-md-4" data-aos="zoom-in" data-aos-delay="500">
+            <div class="card card-stats card-round">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col-icon">
+                            <div class="icon-big text-center icon-primary bubble-shadow-small">
+                                <img src="{% static 'assets/img/lenet.png' %}" alt="LeNet" class="img-fluid" style="max-height: 60px;">
+                            </div>
+                        </div>
+                        <div class="col col-stats ml-3 ml-sm-0">
+                            <div class="numbers">
+                                <p class="card-category">LeNet</p>
+                                <h4 class="card-title">Classic CNN</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="mt-3 mb-0 text-muted">
+                        LeNet is a foundational CNN architecture, primarily used for digit recognition tasks like the MNIST dataset.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- YOLOv5 -->
+        <div class="col-sm-6 col-md-4" data-aos="zoom-in" data-aos-delay="600">
+            <div class="card card-stats card-round">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col-icon">
+                            <div class="icon-big text-center icon-success bubble-shadow-small">
+                                <img src="{% static 'assets/img/yolo.png' %}" alt="YOLOv5" class="img-fluid" style="max-height: 60px;">
+                            </div>
+                        </div>
+                        <div class="col col-stats ml-3 ml-sm-0">
+                            <div class="numbers">
+                                <p class="card-category">YOLOv5</p>
+                                <h4 class="card-title">Object Detection</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="mt-3 mb-0 text-muted">
+                        YOLOv5 is a state-of-the-art object detection model that provides real-time performance and high accuracy.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- How It Works -->
+     <div class="row mt-5">
+        <div class="col-md-12">
+            <h3 class="text-center" data-aos="fade-up">How It Works</h3>
+            <p class="text-center" data-aos="fade-up" data-aos-delay="100">
+              Upload an image, select a CNN model from the sidebar, and receive instant predictions or detections.
+            </p>
+            <div class="carousel slide" id="howItWorksCarousel" data-ride="carousel" data-aos="fade-up" data-aos-delay="200">
+                <ol class="carousel-indicators">
+                    <li data-target="#howItWorksCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#howItWorksCarousel" data-slide-to="1"></li>
+                    <li data-target="#howItWorksCarousel" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="{% static 'assets/img/choose.png' %}" class="d-block w-100" alt="Step 1">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Step 1: Upload Image</h5>
+                            <p>Select an image from your device to analyze.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'assets/img/choose2.png' %}" class="d-block w-100" alt="Step 2">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Step 2: Select Model</h5>
+                            <p>Choose a CNN model from the sidebar to process your image.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'assets/img/choose3.png' %}" class="d-block w-100" alt="Step 3">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Step 3: View Results</h5>
+                            <p>Receive predictions or detections instantly.</p>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#howItWorksCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon bg-dark rounded-circle p-3" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#howItWorksCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon bg-dark rounded-circle p-3" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Features -->
+    <div class="row mt-5">
+        <div class="col-md-12">
+            <h3 class="text-center" data-aos="fade-up">Features</h3>
+            <div class="card-group mt-3">
+                <!-- Feature 1 -->
+                <div class="card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="{% static 'assets/img/multiple.png' %}" class="card-img-top" alt="Multiple CNN Models">
+                    <div class="card-body">
+                        <h5 class="card-title">Multiple CNN Models</h5>
+                        <p class="card-text">Choose from various pre-trained CNN models to suit your needs, each optimized for different tasks.</p>
+                    </div>
+                </div>
+                <!-- Feature 2 -->
+                <div class="card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="{% static 'assets/img/realtime.png' %}" class="card-img-top" alt="Real-Time Inference">
+                    <div class="card-body">
+                        <h5 class="card-title">Real-Time Inference</h5>
+                        <p class="card-text">Get instant predictions or detections on your uploaded images, enabling efficient analysis.</p>
+                    </div>
+                </div>
+                <!-- Feature 3 -->
+                <div class="card" data-aos="fade-up" data-aos-delay="300">
+                    <img src="{% static 'assets/img/userfriendly.png' %}" class="card-img-top" alt="User-Friendly Interface">
+                    <div class="card-body">
+                        <h5 class="card-title">User-Friendly Interface</h5>
+                        <p class="card-text">Easy-to-use dashboard with clear navigation and informative results for seamless user experience.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

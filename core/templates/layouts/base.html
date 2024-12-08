@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Digital Image Dashboard{% endblock title %}</title>
+
+  <!-- Fonts and icons -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet">
+  
+  <!-- AOS CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Nucleo Icons -->
+  <link href="{% static 'assets/css/nucleo-icons.css' %}" rel="stylesheet" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Main CSS Files -->
+  <link href="{% static 'assets/css/black-dashboard.css' %}" rel="stylesheet" />
+  <link href="{% static 'assets/demo/demo.css' %}" rel="stylesheet" />
+  <link href="{% static 'assets/css/custom.css' %}" rel="stylesheet" />
+
+  {% block head_scripts %}{% endblock head_scripts %}
+</head>
+<body class="{% block body_class %}{% endblock body_class %}">
+  <div class="wrapper">
+    {% block sidebar %}{% include 'layouts/sidebar.html' %}{% endblock sidebar %}
+    <div class="main-panel">
+      {% include 'includes/navbar.html' %}
+      <div class="content">
+        {% block content %}{% endblock content %}
+      </div>
+      {% include 'includes/footer.html' %}
+    </div>
+  </div>
+
+  <!-- Load jQuery, Popper.js, and Bootstrap JS from CDN -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+  <!-- Plugins -->
+  <script src="{% static 'js/plugins/perfect-scrollbar.jquery.min.js' %}"></script>
+  <script src="{% static 'js/plugins/chartjs.min.js' %}"></script>
+  <script src="{% static 'js/plugins/bootstrap-notify.js' %}"></script>
+
+  <!-- Black Dashboard Scripts -->
+  <script src="{% static 'js/black-dashboard.min.js?v=1.0.0' %}"></script>
+  <script src="{% static 'demo/demo.js' %}"></script>
+
+  <!-- AOS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+  <!-- Initialize tooltips AFTER jQuery is loaded -->
+  <script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip(); 
+    });
+  </script>
+
+  {% block scripts %}{% endblock scripts %}
+</body>
+</html>

@@ -1,0 +1,35 @@
+{% extends 'layouts/base.html' %}
+{% block content %}
+<div class="row">
+  <div class="col-md-8">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="title">Upload an Image</h5>
+      </div>
+      <div class="card-body">
+        <form action="{% url 'process_image' %}" method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="id_image">Select image:</label>
+            <input type="file" name="image" class="form-control" id="id_image" required>
+          </div>
+          <div class="form-group">
+            <label>Transformation:</label>
+            <select name="operation" class="form-control">
+              <option value="log">Log Transformation</option>
+              <option value="gamma">Gamma Correction</option>
+              <option value="hist_equal">Histogram Equalization</option>
+              <option value="none">None</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Gamma Value (if gamma selected):</label>
+            <input type="text" name="gamma_value" class="form-control" placeholder="e.g. 1.5">
+          </div>
+          <button type="submit" class="btn btn-primary">Process</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

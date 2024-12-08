@@ -1,0 +1,54 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="row">
+  <div class="col-md-8">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="title">Process Image with CNN/Detection Model</h5>
+      </div>
+      <div class="card-body">
+        <form action="{% url 'process_image' %}" method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit" class="btn btn-primary">Process</button>
+        </form>
+
+        {% if error_message %}
+          <div class="alert alert-danger mt-3" role="alert">
+            {{ error_message }}
+          </div>
+        {% endif %}
+
+        {% if processed_image_url %}
+          <hr>
+          <h5>Processed Image:</h5>
+          <img src="{{ processed_image_url }}" class="img-fluid" alt="Processed Image">
+        {% endif %}
+
+        {% if cnn_description %}
+          <hr>
+          <h5>Selected Model:</h5>
+          <p>{{ cnn_description }}</p>
+        {% endif %}
+
+        {% if cnn_results %}
+          <h5>
+            {% if form.cleaned_data.cnn_model == 'yolov5' %}
+              Detected Objects (Top 5):
+            {% else %}
+              Top-5 Predictions:
+            {% endif %}
+          </h5>
+          <ul>
+            {% for label, prob in cnn_results %}
+              <li>{{ label }}: {{ prob|floatformat:2 }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

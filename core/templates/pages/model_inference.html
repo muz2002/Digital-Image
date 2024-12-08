@@ -1,0 +1,67 @@
+<!-- image_app/templates/pages/model_inference.html -->
+
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="row">
+  <div class="col-md-8">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="title">Process Image with CNN/Detection Model</h5>
+      </div>
+      <div class="card-body">
+        <form action="" method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit" class="btn btn-primary">Run {{ model_name|title }}</button>
+        </form>
+
+        {% if error_message %}
+          <div class="alert alert-danger mt-3" role="alert">
+            {{ error_message }}
+          </div>
+        {% endif %}
+
+        {% if processed_image_url %}
+          <hr>
+          <h5>Processed Image:</h5>
+          <img src="{{ processed_image_url }}" class="img-fluid" alt="Processed Image">
+        {% endif %}
+
+        {% if cnn_description %}
+          <hr>
+          <h5>Selected Model:</h5>
+          <p>{{ cnn_description }}</p>
+        {% endif %}
+
+        {% if cnn_results %}
+          {% if model_name == 'yolov5' %}
+            <h5>Detected Objects (Top 5):</h5>
+            <ul>
+              {% for label, prob in cnn_results %}
+                <li>{{ label }}: {{ prob|floatformat:2 }}</li>
+              {% endfor %}
+            </ul>
+          {% elif model_name == 'lenet' %}
+            <!-- For LeNet, display the predicted digit -->
+            <h5>Predicted Digit:</h5>
+            <ul>
+              {% for label, prob in cnn_results %}
+                <li>Digit: {{ label }} (Confidence: {{ prob|floatformat:2 }})</li>
+              {% endfor %}
+            </ul>
+          {% else %}
+            <h5>Top-5 Predictions:</h5>
+            <ul>
+              {% for label, prob in cnn_results %}
+                <li>{{ label }}: {{ prob|floatformat:2 }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

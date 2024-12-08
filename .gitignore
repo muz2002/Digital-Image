@@ -1,0 +1,139 @@
+# Python
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Virtual environments
+env/
+venv/
+ENV/
+env.bak/
+.venv/
+image_app/data/MNIST/raw/
+# Django stuff:
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+db.sqlite3
+# If your project uses a different database, adjust accordingly.
+
+# Django media and static files
+media/
+staticfiles/
+# If you have a different directory for media or static files, update these lines.
+
+# Local settings
+# It's common to have a local_settings.py for development settings
+local_settings.py
+
+# Secret key file
+# If you store your SECRET_KEY in a separate file, ignore it
+secret_key.txt
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# Test reports
+*.log
+
+# Translations
+*.mo
+*.pot
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# Sphinx documentation
+docs/_build/
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# Translations
+*.mo
+*.pot
+
+# Django migrations
+# You might want to include migrations, but if not, uncomment the following line:
+# migrations/
+
+# SQLite database
+*.sqlite3
+
+# MySQL
+*.myd
+*.myi
+*.frm
+
+# PostgreSQL
+pgdata/
+
+# Media files
+/media/
+
+# Static files
+/static/
+
+# Logs
+*.log
+
+# System files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# IDEs and Editors
+# Visual Studio Code
+.vscode/
+
+# PyCharm
+.idea/
+*.iml
+
+# Emacs
+*~
+
+# Vim
+*.swp
+.sass-cache/
+
+# Other files
+*.bak
+*.tmp
+*.temp

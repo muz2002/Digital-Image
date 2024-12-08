@@ -1,0 +1,33 @@
+/* custom.css */
+
+/* Adjust card images */
+.card-img-top {
+  height: 150px;
+  object-fit: contain;
+  padding: 10px;
+}
+
+/* Hero section background */
+.panel-header {
+  background: url("{% static 'assets/img/models/hero_background.jpg' %}") center
+    center / cover no-repeat;
+}
+
+/* Card text alignment */
+.card-body p {
+  font-size: 0.9rem;
+}
+
+/* Carousel captions */
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 5px;
+}
+/* custom.css */
+
+.card:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
