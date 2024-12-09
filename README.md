@@ -21,7 +21,35 @@
 
 ## Project Structure
 
-. ├── config │ ├── init.py │ ├── settings.py │ ├── urls.py │ ├── asgi.py │ └── wsgi.py ├── core │ ├── init.py │ ├── admin.py │ ├── apps.py │ ├── models.py │ ├── tests.py │ ├── views.py │ ├── templates │ │ └── pages │ │ └── index.html │ └── static │ └── assets │ ├── img │ └── scss │ └── black-dashboard │ └── bootstrap │ └── \_custom-forms.scss ├── media │ └── uploaded.png ├── manage.py └── requirements.txt
+```.
+├── config
+│   ├── __init__.py
+│   ├── settings.py
+│   ├── urls.py
+│   ├── asgi.py
+│   └── wsgi.py
+├── core
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── tests.py
+│   ├── views.py
+│   ├── templates
+│   │   └── pages
+│   │       └── index.html
+│   └── static
+│       └── assets
+│           ├── img
+│           └── scss
+│               └── black-dashboard
+│                   └── bootstrap
+│                       └── _custom-forms.scss
+├── media
+│   └── uploaded.png
+├── manage.py
+└── requirements.txt
+```
 
 ## Prerequisites
 
