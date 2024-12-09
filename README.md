@@ -1,4 +1,4 @@
-# Application Name
+# Digital Image Processing Course Final Dashboard
 
 ## Table of Contents
 
