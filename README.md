@@ -115,6 +115,10 @@
 
 ![choose](https://github.com/user-attachments/assets/e494eacc-3a19-413d-972e-43056ea57192)
 
+![choose2](https://github.com/user-attachments/assets/1b31b6f8-a02c-41f1-9e8b-e38fd59d8595)
+
+![choose3](https://github.com/user-attachments/assets/0bee20dd-bbee-450d-ab31-410aceff5163)
+
 ## Contribution
 
 Contributions are welcome! Please open an issue or submit a pull request for any improvements.
